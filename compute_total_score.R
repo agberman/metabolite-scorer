@@ -3,7 +3,7 @@
 # 5 May 2017
 
 
-setwd("/Users/adamberman/Independent_Work")
+setwd("/Users/adamberman/metabolite-scorer")
 
 library(futile.matrix)
 library(reshape2)
@@ -426,8 +426,9 @@ total_results$Normalized_Total_Score <- ((total_results$Total_Score - min(total_
 # Sort by total scores
 total_results_sorted <- total_results[with(total_results, order(-Total_Score)), ]
 
-# Ten metabolites with highest total scores
-head(total_results_sorted, 10)
+# Print the 20 metabolites with highest normalized 
+# overall scores at the optimal alpha value
+head(total_results_sorted, 20)
 
 # Generate a histogram of normalized total scores, computed using the 
 # best alpha value as computed by ROC machine learning techniques
